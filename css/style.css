@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+td {
+  border: 1px solid black;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.blue-bg {
+  background-color: lightblue;
+}
+
+.bold-yellow {
+  font-weight: bold;
+  background-color: yellow;
+}
+
+.error-text,
+.sum-text {
+  color: red;
+  font-weight: bold;
+}
