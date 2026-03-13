@@ -3,16 +3,23 @@ const content = document.getElementById("content");
 const input1 = prompt("Enter the first integer:");
 const input2 = prompt("Enter the second integer:");
 
-const num1 = Number(input1);
-const num2 = Number(input2);
+if (!isNaN(input1) && !isNaN(input2) &&
+    Number.isInteger(Number(input1)) &&
+    Number.isInteger(Number(input2))) {
 
-const isValidInteger = (value) => {
-  return value !== null && value.trim() !== "" && !isNaN(value) && Number.isInteger(Number(value));
-};
+  const sum = Number(input1) + Number(input2);
 
-if (isValidInteger(input1) && isValidInteger(input2)) {
-  const sum = num1 + num2;
-  content.innerHTML = `The sum is <span class="sum-text">${sum}</span>`;
+  const span = document.createElement("span");
+  span.textContent = sum;
+  span.style.color = "red";
+  span.style.fontWeight = "bold";
+
+  content.append("The sum is ");
+  content.appendChild(span);
 } else {
-  content.innerHTML = `<span class="error-text">Error: You must enter two integers. You entered "${input1}" and "${input2}".</span>`;
+  const span = document.createElement("span");
+  span.textContent = `Error: You must enter two integers. You entered "${input1}" and "${input2}".`;
+  span.style.color = "red";
+  span.style.fontWeight = "bold";
+  content.appendChild(span);
 }
